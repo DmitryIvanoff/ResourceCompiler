@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Помощь</title>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="description" content="Help page">
+    <meta name="author" content="APACS3000">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="intro">
+        <header>
+            <center>
+            <h4>Что такое ApcResTranslator?</h4>
+            </center>
+	    </header>
+        <div class="content-layout">
+            <p>Это программа для создания различных локализаций комплекса APACS3000.
+                Перевод может быть осуществлен как вручную, так и автоматически
+                с помощью одного из <a href="#services">сервисов</a>.
+                В качестве референса используется <a href="#ru">Русский</a> язык,
+                т.к. изначально это основной язык комплекса (это можно указать/именить в настройках).
+            </p>
+        </div>
+    </div>
+
+    <div class="languages">
+        <header>
+            <p>Поддерживаются следующие языки:</p>
+	    </header>
+        <ul>
+            <li>Азербайджанский</li>
+            <li>Английский</li>
+            <li>Казахский</li>
+            <li>Украинский</li>
+            <li id="ru">Русский</li>
+        </ul>
+    </div>
+    <div class="services">
+        <header>
+            <p>Сервисы:</p>
+	    </header>
+        <ul id="services">
+            <li><a href="https://cloud.yandex.ru/services/translate">Yandex</a></li>
+            <li><a href="https://pypi.org/project/googletrans/">googletrans</a></li>
+            <li><a href="https://cloud.google.com/translate">GoogleTranslate</a></li>
+        </ul>
+        <p>Сервисы, используемые в программе рассчитаны на коммерческое использование. Заранее ознакомьтесь с тарифами и получите токен или ключ в зависимости от сервиса.</p>
+    </div>
+    <div class="howto">
+        <header>
+            <h4>Как этим пользоваться?</h4>
+	    </header>
+        <h5>Установка API-ключа:</h5>
+            <p>Чтобы получить API-ключ для Yandex.Translate, зарегистрируйте <i>сервисный аккаунт</i> в <a href="https://cloud.yandex.ru/services/translate">Яндекс.Облаке</a></p>
+            <p>Чтобы получить API-ключ для Google.Translate, зарегистрируйте <i>сервисный аккаунт</i> в <a href="https://cloud.google.com/translate">Google.Cloud</a></p>
+        <h5>Cценарий первого открытия:</h5>
+        <p>Допустим у нас есть только перевод на 'Русский' для модуля Apacs30\Modules\ApcClientExtensions\ApcClExtMap.
+        И мы хотим добавить новые языки.</p>
+        <ol>
+            <li>Нажимаем "Файл" -> "Открыть". И выбираем папку с ресурсами (у нас это ApcClExtMap\ResClMain там лежит xml файл и папки с различными локализациями).
+                Выбираем языки, на которые нужен перевод, и референс (основной язык,в нашем случае 'русский', можно задать в настройках, чтобы постоянно не выбирать).
+                Если нужен автоперевод, то выбираем сервис (если этому сервису нужен API-ключ, как например Yandex,
+                задаем его в настройках). Нажимаем Ok.
+                На этом этапе создается(если такого файла не было)/обновляется файл в формате JSON, который можно изменять в любом текстовом редакторе.
+                               </li>
+            <li>Нужные поля редактируем или в самой программе, или изменяем непосредственно JSON файл в текстовом редакторе, как удобно.</li>
+            <li><sup>*</sup>Если редактировали в тестовом редакторе, можно воспользоваться консольной версией программы или нажать "Открыть из JSON".</li>
+            <li>Нажимаем "Сохранить". Изменения отразились в исходных файлах ресурсов, теперь их нужно пересобрать.</li>
+            <li>Нажимаем "Пересобрать ресурсы". Готово!</li>
+        </ol>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+PyQt5
+requests
+google-cloud-translate
+chardet
+lxml
